@@ -5,6 +5,8 @@ class Food < ApplicationRecord
   has_many :carts, through: :cart_foods
 
   has_many :order_items
-  geocoded_by :address
+  geocoded_by :address, latitude: :lat, longitude: :lng
   after_validation :geocode
+  # --------------------------------------callback---------------------
+  # --------------------------------------dirty object
 end

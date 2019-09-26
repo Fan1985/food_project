@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 2019_09_26_083918) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "endup_time"
-    t.decimal "lat"
-    t.decimal "lng"
+    t.float "lat"
+    t.float "lng"
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
