@@ -21,18 +21,17 @@ class FoodsController < ApplicationController
   end
 
   def create   
-    # post?
-    results = Geocoder.search("Paris")
-    results.first.coordinates
-    # => [48.856614, 2.3522219]  # latitude and longitude       
-    # https://maps.googleapis.com/maps/api/geocode/json?address=<%=params[:address]台灣台北市萬華區康定路190號%>
-    @food = current_user.foods.build(clean_params)
+    geo_result = Geocoder.search(params[:food][:address])
+  
+    # lat = geo_result.first.coordinates[0]
+    # lng = geo_result.first.coordinates[1]
+    # @food = current_user.foods.build(clean_params)
     
-    if @food.save
-      redirect_to foods_path, notice: '新增po文成功'
-    else
-      render :edit
-    end
+    # if @food.save
+    #   redirect_to foods_path, notice: '新增po文成功'
+    # else
+    #   render :edit
+    # end
   end
 
   def edit
