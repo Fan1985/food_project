@@ -5,4 +5,6 @@ class Food < ApplicationRecord
   has_many :carts, through: :cart_foods
 
   has_many :order_items
+  geocoded_by :address
+  after_validation :geocode
 end

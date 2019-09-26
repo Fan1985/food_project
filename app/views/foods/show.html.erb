@@ -22,7 +22,7 @@
       }
   </style>
 
-      <div id="map"></div>
+      <div id="map" style="display: none: ;"></div>
 
   
   <script>
@@ -43,6 +43,7 @@
               map: map,
               position: results[0].geometry.location
           });
+          console.log(results);
         } else {
           console.log(status);
         }
