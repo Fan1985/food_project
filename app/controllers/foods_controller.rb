@@ -22,7 +22,7 @@ class FoodsController < ApplicationController
 
   def create   
     geo_result = Geocoder.search(params[:food][:address])     #將params地址欄位轉發google進行geocoding，並回傳geocoding obj 
-    lat = geo_result.first.coordinates[0]     #抽取 geocoding obj 中的經緯資料 ，存入 lat 及 lng
+    lat = geo_result.first.coordinates[0]    #抽取 geocoding obj 中的經緯資料 ，存入 lat 及 lng
     lng = geo_result.first.coordinates[1]
     params_with_geo = clean_params.merge({lat: lat, lng: lng})
     

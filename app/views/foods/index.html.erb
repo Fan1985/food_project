@@ -29,7 +29,35 @@
 <% end %>
   <%= link_to "新增po文", new_food_path, class:'btn btn-primary' %> <!-- #到時後會放在navbar -->
 
+<p><button onclick="geoFindMe()">取得經緯資料</button></p>
+<div id="out"></div>
 
+<script>
+  function geoFindMe() {
+  var output = document.getElementById("out");
+
+    if (!navigator.geolocation){
+      output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+      return;
+    }
+
+ 
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log(position)``
+  };
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  };
+
+  navigator.geolocation.getCurrentPosition(success, error);
+
+
+  } 
+
+</script>
 
 
 
