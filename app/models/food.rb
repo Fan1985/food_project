@@ -9,4 +9,6 @@ class Food < ApplicationRecord
   after_validation :geocode
   # --------------------------------------callback---------------------
   # --------------------------------------dirty object
+  has_one_attached :avatar
+
 end
