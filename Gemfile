@@ -25,6 +25,7 @@ gem 'rails_12factor', group: :production
 gem 'active_storage_validations'
 gem "aws-sdk-s3", require: false
 gem 'carrierwave'
+gem "fog-aws"
 
 
 # Use Puma as the app server
