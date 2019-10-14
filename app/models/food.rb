@@ -12,6 +12,7 @@ class Food < ApplicationRecord
   has_many :order_items, dependent: :delete_all
   has_one_attached :avatar
   validates :avatar, attached: true, content_type: [:png, :jpg]
+  mount_uploader :picture, ImageUploader # ------------------carrierwave
   
 
   def self.search(search)
