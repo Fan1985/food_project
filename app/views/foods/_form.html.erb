@@ -6,21 +6,22 @@
   </ul>
 <% end %>
 <div class="section_form">
-  <%= form_for(food) do |form| %>
-    <div class="container-fluid container_form p-0">
+  <%= form_with(model: food, local: true, :html => { multipart: true }) do |form| %>
+      <div class="container-fluid container_form p-0">
       <div class="row no-gutters row_form">
   
       <div class="col-lg-6 col-11 col_form">
 
         <div class="form-group">
-          <%= form.label :avatar, '檔案上傳', class:'label_form'%>
-          <%= form.file_field :avatar, class:'input_img'%>
+          <%= form.label :picture, '檔案上傳', class:'label_form'%>
+          <%= form.file_field :picture, class:'input_img'%>
         </div>
 
         <div class="form-group">
           <%= form.label :title, '食物名稱：', class:'label_form' %>
           <%= form.text_field :title, class:'input_form col-12' %>
         </div>
+        
 
         <div class="form-group">
           <%= form.label :quantity, ' 數量：', class:'label_form' %>
